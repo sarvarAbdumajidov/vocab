@@ -2,7 +2,9 @@ import '../database/vocabulary_database.dart';
 import '../service/io_service.dart';
 
 int number = io.number;
-
+String key = io.text;
+String value = io.text;
+int countNum = 0;
 void build(Database database) {
   print('''
   1. Yangi so'zlarni kiritish
@@ -16,11 +18,27 @@ void build(Database database) {
   switch (number) {
     case 1:
       {
-        print('word');
-        String key = io.text;
-        print('translate');
-        String value = io.text;
-        database.addVocab(key, value);
+        num countt = 1;
+        while (countt != 0) {
+          countNum++;
+          print('word');
+          key = io.text;
+          print('translate');
+          value = io.text;
+          print('chiqiw 0');
+          print('davom etiw ucun 1 ni bosing');
+          countt = io.number;
+          database.addVocab(key, value);
+          if (countt == 0) {
+            database.exit(database);
+          }
+        }
+      }
+      break;
+    case 2:
+      {
+        value = io.text;
+        database.shuffle();
         database.exit(database);
       }
       break;
