@@ -5,6 +5,7 @@ int number = io.number;
 String key = io.text;
 String value = io.text;
 int countNum = 0;
+
 void build(Database database) {
   print('''
   1. Yangi so'zlarni kiritish
@@ -37,7 +38,6 @@ void build(Database database) {
       break;
     case 2:
       {
-        value = io.text;
         database.shuffle();
         database.exit(database);
       }
