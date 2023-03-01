@@ -26,8 +26,8 @@ void build(Database database) {
           key = io.text;
           print('translate');
           value = io.text;
-          print('chiqiw 0');
-          print('davom etiw ucun 1 ni bosing');
+          print('0. back');
+          print('1. continue');
           countt = io.number;
           database.addVocab(key, value);
           if (countt == 0) {

@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import '../main/vocabulary_main.dart';
 import '../model/vocabulary_model.dart';
@@ -17,10 +16,10 @@ class Database {
   void printInfo() {
     vocabList.sort((a, b) => a.word.compareTo(b.word));
     for (var values in vocabList) {
-      print('''word ${values.word}    translate ${values.translate}
+      print('''${values.word} --- ${values.translate}
       ''');
     }
-    print('chiqish uchun 0');
+    print('0. back');
     number = io.number;
     if (number == 0) {}
   }
@@ -30,9 +29,11 @@ class Database {
   }
 
   void shuffle() {
-    vocabList.shuffle();
+
     while (number != 0) {
+      vocabList.shuffle();
       for (var item in vocabList) {
+
         print(item.word);
         text = io.text;
         if (item.translate == text) {
@@ -40,8 +41,8 @@ class Database {
         } else {
           print(false);
         }
-        print('davom ettirish uchun 1 ni bosing');
-        print('chiqish uchun 0 ni bosing');
+        print('1. continue');
+        print('0. back');
         number = io.number;
         if(number == 1){}
       }
