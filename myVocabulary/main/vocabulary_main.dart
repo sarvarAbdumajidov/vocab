@@ -48,5 +48,7 @@ void build(Database database) {
         database.exit(database);
       }
       break;
+    case 4:
+
   }
 }

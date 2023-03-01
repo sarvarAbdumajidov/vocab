@@ -1,4 +1,3 @@
-
 import '../main/vocabulary_main.dart';
 import '../model/vocabulary_model.dart';
 import '../service/io_service.dart';
@@ -29,11 +28,9 @@ class Database {
   }
 
   void shuffle() {
-
     while (number != 0) {
       vocabList.shuffle();
       for (var item in vocabList) {
-
         print(item.word);
         text = io.text;
         if (item.translate == text) {
@@ -44,8 +41,13 @@ class Database {
         print('1. continue');
         print('0. back');
         number = io.number;
-        if(number == 1){}
+        if (number == 1) {}
       }
     }
+  }
+
+  void remove() {
+    text = io.text;
+    vocabList.removeWhere((element) => element.word == text);
   }
 }
